@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form';
 export function useLoginController() {
   const {
     handleSubmit: hookFormHandleSubmit,
+    register
   } = useForm();
 
-  const handleSubmit = hookFormHandleSubmit(() => {
-    console.log('Hook form submit');
+  const handleSubmit = hookFormHandleSubmit((data) => {
+    console.log(data);
   });
 
-  return { handleSubmit };
+  return { handleSubmit, register };
 }
